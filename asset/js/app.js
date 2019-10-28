@@ -161,7 +161,7 @@ submit_buttom_text = "Submit";
 
 next_question_buttom_text = "Next Question";
 
-correct_text = "Yes! Your Are Correct!";
+correct_text = "Yes! You Are Correct!";
 
 incorrect_text = "Incorrect, but don't give up! Try again!";
 
