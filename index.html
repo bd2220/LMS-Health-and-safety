@@ -1,0 +1,120 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+    <link href="asset/css/index.css" rel="stylesheet">
+
+    <title>LMS - Occupational Health and Safety</title>
+  </head>
+
+  <body> 
+
+    <div id="app">
+
+		<nav class="navbar navbar-expand-sm navbar-dark justify-content-center nav-1">
+		  <ul class="navbar-nav ">
+		    <li class="nav-item active">
+		      <h3 class="nav-link" href="./index.html">{{ title }}</h3>
+		    </li>
+		  </ul>
+		</nav>
+
+		<nav class="navbar navbar-expand-sm navbar-light bg-light nav-2">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		     <ul class="navbar-nav mr-auto">
+
+		      <li class="nav-item active">
+		        <a class="nav-link" href="./index.html"> Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="./test.html">Test</a>
+		      </li>
+
+		     </ul>
+		   </div>
+		</nav>
+
+		<div class="container main-container">
+			<div v-for="member in team">
+				<div class="member-container row">
+
+					<div class="member-title-img-container col-md-3">
+			          <div class="member-title-container">
+			            <span class="member-title">
+			               {{member.title}}
+			            </span>
+			          </div>  
+			          <div> 
+			               <img class="class= member-img mb-3 mb-md-0 img-fluid rounded" v-bind:src="member.img" alt="Not Found Img">
+			          </div>
+			        </div>
+
+			        <div class="member-detail-left offset-md-1 col-md-3">
+				          <div class="member-priority-container">
+				            <div class="member-detail-title-text-container">
+				              <span class="member-detail-title-text">
+				                 {{priorities}}
+				              </span>
+				            </div> 
+				            <div class="member-detail-description-container">
+				              <ul class="member-detail-list">
+				                <div v-for="priority in member.priorities">
+				                  <li>
+				                     {{priority}}
+				                  </li>
+				                </div>
+				              </ul>
+				            </div>
+				          </div>
+			          </div>  
+			            
+			         
+			         <div class="member-detail-right col-md-5">
+				          <div class="member-concerns-container">
+				            <div class="member-detail-title-text-container">
+				              <span class="member-detail-title-text">
+				                 {{concerns}}
+				              </span>
+				            </div> 
+				            <div class="member-detail-description-container">
+				              <ul class="member-detail-list">
+				                 <div v-for="concern in member.concerns">
+				                  <li>
+				                     {{concern}}
+				                  </li>
+				                </div>
+				              </ul>
+				            </div>
+				          </div>
+			         </div> 
+	 
+				</div>
+			</div>
+		</div>
+
+
+    </div>
+
+    <script src="asset/js/app.js"></script>
+
+    <!-- Optional JavaScript -->
+
+  </body>
+</html>

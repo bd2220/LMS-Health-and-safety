@@ -1,14 +1,8 @@
 img_path_root = "./asset/imgs/"
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    title: "Learning Management System Occupational Health and Safety",
+nav_title = "Learning Management System Occupational Health and Safety"
 
-    priorities:"Priorities",
-    concerns:"Concerns and Challenges",
-
-    team:{
+all_members = {
     	"ill_worker" : {
     		"title"      : "Injured/Ill Worker",
 		    "img"       : img_path_root+"injured_ill_worker.png",
@@ -145,7 +139,36 @@ var app = new Vue({
 		          "Managing a large case load",
 		          "Safe and sustainable return to work plans implemented at the right time"
 		    ]
-    	},
+    	}
     }
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    title: nav_title,
+
+    priorities:"Priorities",
+    concerns:"Concerns and Challenges",
+
+    team: all_members
   }
+})
+
+
+
+var app2 = new Vue({
+  el: '#test',
+  data: {
+    title: nav_title,
+
+    team: all_members
+  },
+  methods: {
+    handleChange: function(e) {
+        if(e.target.options.selectedIndex > -1) {
+            console.log(e.target.options[e.target.options.selectedIndex].dataset.foo)
+        }
+    }
+}
+
 })

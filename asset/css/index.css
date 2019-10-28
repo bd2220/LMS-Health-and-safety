@@ -1,0 +1,149 @@
+body {
+    /*padding-top: 5em;*/
+    font-family: Tahoma, Geneva, sans-serif !important;
+    background-color: #6994ab;
+}
+
+
+
+
+.nav-1 {
+    /*background-color: #004b73 !important;*/
+    background-color: #28546b;
+}
+
+.nav-2 {
+    padding-left: 10%;
+}
+
+.main-container {
+    padding-top: 2em;
+}
+
+
+
+.member-container {
+    margin-bottom: 2em;    
+}
+
+.member-title-container {
+    padding-top: 1em;
+    text-align: center;
+    background-color: #004E72;
+    padding-bottom: 20%;
+}
+
+.member-title {
+    color: white;
+    font-size: 1.5em;
+}
+
+.member-title-img-container {
+    padding: 0;
+    border: 3px solid #004E72;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.member-img {
+    background-color: white;
+    overflow:hidden;
+    object-fit: contain;
+}
+
+
+
+
+.member-detail-left {
+    border-top-left-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
+    border-bottom: 3px solid #004E72;
+    border-top: 3px solid #004E72;
+    border-left: 3px solid #004E72;
+    background-color:#D1DBE4;
+}
+
+.member-priority-container {
+    border-right: 1px solid #004E72;
+    margin-bottom: .2em;
+    margin-top: .5em;
+    height: 95%;
+}
+
+
+
+
+.member-detail-right {
+    border-bottom-right-radius: 10px 10px;
+    border-top-right-radius: 10px 10px;
+    border-top: 3px solid #004E72;
+    border-bottom: 3px solid #004E72;
+    border-right: 3px solid #004E72;
+    background-color:#D1DBE4;
+}
+
+.member-concerns-container {
+    margin-bottom: .2em;
+    margin-top: .5em;
+    height: 95%;
+}
+ 
+
+
+.member-detail-title-text-container {
+    padding-top: .5em;
+}
+
+.member-detail-title-text {
+    color: #004E72;
+    font-size: 1.5em;
+}
+
+
+
+
+.member-detail-description-container {
+    margin-top: 1em;
+
+}
+.member-detail-list {
+    padding-left: 1em;
+}
+
+
+
+/* for mobile view*/
+@media only screen and (max-width: 767px) {
+    .member-detail-left {
+        margin-bottom: 1em;
+        margin-top:1em;
+        border-radius: 10px;
+        border: 3px solid #004E72;
+        
+    }
+    .member-priority-container {
+        border-right: none;
+    }
+    .member-detail-right {
+        border-radius: 10px;
+        border: 3px solid #004E72;
+    } 
+}
+
+/*@media only screen and (max-width: 595px) {
+    .member-title-img-container {
+        margin-left: .5em;
+        margin-right: .5em;       
+    }
+    .member-detail-left {
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+    .member-detail-right {
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+}*/
+
+
+ 
