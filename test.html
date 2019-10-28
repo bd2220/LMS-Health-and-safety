@@ -23,7 +23,7 @@
   <body> 
 
     <div id="test">
-
+    	<!-- Navigation 1 -->
 		<nav class="navbar navbar-expand-sm navbar-dark justify-content-center nav-1">
 		  <ul class="navbar-nav ">
 		    <li class="nav-item active">
@@ -31,7 +31,7 @@
 		    </li>
 		  </ul>
 		</nav>
-
+		<!-- Navigation 2 -->
 		<nav class="navbar navbar-expand-sm navbar-light bg-light nav-2">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -41,21 +41,110 @@
 		     <ul class="navbar-nav mr-auto">
 
 		      <li class="nav-item">
-		        <a class="nav-link" href="./index.html"> Home <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="./index.html"> {{ nav_home_text }} <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item active">
-		        <a class="nav-link" href="./test.html">Test</a>
+		        <a class="nav-link" href="./test.html"> {{ nav_test_text }} </a>
 		      </li>
 
 		     </ul>
 		   </div>
 		</nav>
 
+
+		<div class="question" v-if="ready===1">
+
+			<!-- Main Content Container -->
+			<div class="container main-container">
+						<!-- Question -->
+						<h3 >
+							{{ question_text }}
+						</h3>
+						 
+						<div class="member-container row">
+							<!-- Sample Priorities -->
+						    <div class="member-detail-left offset-md-1 col-md-3">
+						          <div class="member-priority-container">
+						            <div class="member-detail-title-text-container">
+						              <span class="member-detail-title-text">
+						                 {{priorities}}
+						              </span>
+						            </div> 
+						            <div class="member-detail-description-container">
+						              <ul class="member-detail-list">
+						                <div v-for="priority in question.priorities">
+						                  <li>
+						                     {{priority}}
+						                  </li>
+						                </div>
+						              </ul>
+						            </div>
+						          </div>
+						    </div>  
+						            
+						    <!-- Sample Concerns -->
+						    <div class="member-detail-right col-md-5">
+						          <div class="member-concerns-container">
+						            <div class="member-detail-title-text-container">
+						              <span class="member-detail-title-text">
+						                 {{concerns}}
+						              </span>
+						            </div> 
+						            <div class="member-detail-description-container">
+						              <ul class="member-detail-list">
+						                 <div v-for="concern in question.concerns">
+						                  <li>
+						                     {{concern}}
+						                  </li>
+						                </div>
+						              </ul>
+						            </div>
+						          </div>
+						     </div> 
+				 
+						</div>
+
+						<!-- Question Options -->
+						<div class="question-options">
+							<input type="radio" id="one" v-on:click="reset_correct" value="1" v-model="selected">
+							<label for="one">{{ question.members_names[0] }}</label>
+							<br>
+							<input type="radio" id="two" v-on:click="reset_correct" value="2" v-model="selected">
+							<label for="two">{{ question.members_names[1] }}</label>
+							<br>
+							<input type="radio" id="three" v-on:click="reset_correct" value="3" v-model="selected">
+							<label for="three">{{ question.members_names[2] }}</label>
+							<br>
+							<input type="radio" id="four" v-on:click="reset_correct" value="4" v-model="selected">
+							<label for="four">{{ question.members_names[3] }}</label>
+							<br>
+							<br>
+
+							<!-- Submit and Renew Questions Buttons -->
+							<button v-on:click="check_answer" type="button" class="btn btn-success question-buttons"> {{ submit_buttom_text }} </button>
+							<button v-on:click="new_question" type="button" class="btn btn-primary question-buttons"> {{ next_question_buttom_text }} </button>
+
+							<!-- Answer Result -->
+							<h1 v-if="correct===1"> {{ correct_text }} </h1>
+							<h1 v-if="correct===0"> {{ incorrect_text }} </h1>
+						</div>
+
+			</div>
+
+		</div>
+
+				<!-- Footer -->
+		<footer id="sticky-footer" class="py-4 footer-custom">
+		  <div class="container text-center">
+		    <small>{{ footer }}</small>
+		  </div>
+		</footer>
+
+	</div>
+
+	<script src="asset/js/app.js"></script>
+
  
-
-    <script src="asset/js/app.js"></script>
-
-    <!-- Optional JavaScript -->
 
   </body>
 </html>

@@ -1,8 +1,6 @@
- 
-
-
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,7 +21,7 @@
   <body> 
 
     <div id="app">
-
+    	<!-- Navigation 1 -->
 		<nav class="navbar navbar-expand-sm navbar-dark justify-content-center nav-1">
 		  <ul class="navbar-nav ">
 		    <li class="nav-item active">
@@ -31,7 +29,7 @@
 		    </li>
 		  </ul>
 		</nav>
-
+		<!-- Navigation 2 -->
 		<nav class="navbar navbar-expand-sm navbar-light bg-light nav-2">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -41,31 +39,35 @@
 		     <ul class="navbar-nav mr-auto">
 
 		      <li class="nav-item active">
-		        <a class="nav-link" href="./index.html"> Home <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="./index.html"> {{ nav_home_text }} <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="./test.html">Test</a>
+		        <a class="nav-link" href="./test.html"> {{ nav_test_text }} </a>
 		      </li>
 
 		     </ul>
 		   </div>
 		</nav>
 
+		<!-- Main Content Container -->
 		<div class="container main-container">
 			<div v-for="member in team">
 				<div class="member-container row">
 
+					<!-- Member Title -->
 					<div class="member-title-img-container col-md-3">
 			          <div class="member-title-container">
 			            <span class="member-title">
 			               {{member.title}}
 			            </span>
-			          </div>  
+			          </div>
+			          <!-- Member Image -->  
 			          <div> 
 			               <img class="class= member-img mb-3 mb-md-0 img-fluid rounded" v-bind:src="member.img" alt="Not Found Img">
 			          </div>
 			        </div>
 
+			        <!-- Member Priorities -->
 			        <div class="member-detail-left offset-md-1 col-md-3">
 				          <div class="member-priority-container">
 				            <div class="member-detail-title-text-container">
@@ -85,7 +87,7 @@
 				          </div>
 			          </div>  
 			            
-			         
+			         <!-- Member concerns -->
 			         <div class="member-detail-right col-md-5">
 				          <div class="member-concerns-container">
 				            <div class="member-detail-title-text-container">
@@ -109,12 +111,16 @@
 			</div>
 		</div>
 
+		<!-- Footer -->
+		<footer id="sticky-footer" class="py-4 footer-custom">
+		  <div class="container text-center">
+		    <small>{{ footer }}</small>
+		  </div>
+		</footer>
 
     </div>
 
     <script src="asset/js/app.js"></script>
-
-    <!-- Optional JavaScript -->
 
   </body>
 </html>
